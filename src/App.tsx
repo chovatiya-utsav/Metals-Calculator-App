@@ -7,6 +7,7 @@ import ItemForm from './components/ItemForm';
 import ItemList from './components/ItemList';
 import Summary from './components/Summary';
 import Receipt from './components/Receipt';
+import AdBanner from './components/AdBanner';
 
 function App() {
 
@@ -132,6 +133,16 @@ function App() {
           rateError={rateError}
         />
 
+        {/* Top Ad Banner */}
+        <div className="mb-6">
+          <AdBanner 
+            adSlot="1234567890" 
+            adFormat="auto" 
+            fullWidthResponsive={true} 
+            className="text-center"
+          />
+        </div>
+
         {!selectedCity.id && (
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
             <p className="text-yellow-800 text-center">
@@ -212,6 +223,16 @@ function App() {
               </>
             )}
           </div>
+        </div>
+
+        {/* Bottom Ad Banner */}
+        <div className="mt-8">
+          <AdBanner 
+            adSlot="1234567890" 
+            adFormat="auto" 
+            fullWidthResponsive={true} 
+            className="text-center"
+          />
         </div>
           </>
         )}
