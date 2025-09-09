@@ -107,23 +107,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 flex">
-      {/* Left Ad Space */}
-      <div className="hidden lg:block w-48 xl:w-64 flex-shrink-0 p-4">
-        <div className="sticky top-4">
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center text-gray-500 text-sm">
-            Google Ads Space
-            <br />
-            (Left Side)
-          </div>
-          <div className="bg-gray-100 rounded-lg h-64 mt-4 flex items-center justify-center text-gray-500 text-sm">
-            Additional Ad Space
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
       {/* Main Content */}
-      <div className="flex-1 max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -229,20 +215,6 @@ function App() {
         </div>
           </>
         )}
-      </div>
-
-      {/* Right Ad Space */}
-      <div className="hidden lg:block w-48 xl:w-64 flex-shrink-0 p-4">
-        <div className="sticky top-4">
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center text-gray-500 text-sm">
-            Google Ads Space
-            <br />
-            (Right Side)
-          </div>
-          <div className="bg-gray-100 rounded-lg h-64 mt-4 flex items-center justify-center text-gray-500 text-sm">
-            Additional Ad Space
-          </div>
-        </div>
       </div>
     </div>
   );
