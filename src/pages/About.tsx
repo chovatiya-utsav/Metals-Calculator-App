@@ -1,9 +1,14 @@
 import React from 'react';
 import { Gem, Target, Users, Award, TrendingUp, Shield } from 'lucide-react';
+import Layout from '../components/Layout';
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+    <Layout 
+      currentPage="about"
+      title="About Us - Metals Calculator | Professional Precious Metals Pricing"
+      description="Learn about Metals Calculator - the professional precious metals pricing tool for jewelry professionals, traders, and consumers. Real-time gold, silver, and platinum calculations."
+    >
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -121,7 +126,7 @@ const About: React.FC = () => {
           </a>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

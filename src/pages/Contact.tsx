@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import Layout from '../components/Layout';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+    <Layout 
+      currentPage="contact"
+      title="Contact Us - Metals Calculator | Get Help & Support"
+      description="Contact Metals Calculator for support, questions, or feedback. Get help with our precious metals pricing calculator and professional jewelry valuation tools."
+    >
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -175,7 +180,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

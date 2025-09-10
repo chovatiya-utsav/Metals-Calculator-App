@@ -8,8 +8,7 @@ import ItemList from './components/ItemList';
 import Summary from './components/Summary';
 import Receipt from './components/Receipt';
 import AdBanner from './components/AdBanner';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
 import FAQ from './components/FAQ';
 
 function App() {
@@ -111,10 +110,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 overflow-x-hidden">
-      <Navigation currentPage="home" />
-      
-      {/* Main Content */}
+    <Layout 
+      currentPage="home"
+      title="Metals Calculator - Professional Gold & Silver Pricing Tool"
+      description="Professional precious metals calculator with real-time gold, silver, and platinum pricing. GST compliant calculations, receipt generation, and accurate jewelry valuation for buyers and sellers."
+    >
       <div className="max-w-6xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
@@ -320,9 +320,7 @@ function App() {
         {/* FAQ Section */}
         <FAQ />
       </div>
-      
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

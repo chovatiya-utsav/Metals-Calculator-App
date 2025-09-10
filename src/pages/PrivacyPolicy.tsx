@@ -1,9 +1,14 @@
 import React from 'react';
 import { Shield, Eye, Lock, Database, UserCheck } from 'lucide-react';
+import Layout from '../components/Layout';
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+    <Layout 
+      currentPage="privacy"
+      title="Privacy Policy - Metals Calculator | Data Protection & Privacy"
+      description="Read our privacy policy to understand how Metals Calculator collects, uses, and protects your personal information when using our precious metals pricing calculator."
+    >
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -162,7 +167,7 @@ const PrivacyPolicy: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

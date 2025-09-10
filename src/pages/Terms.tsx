@@ -1,9 +1,14 @@
 import React from 'react';
 import { FileText, AlertTriangle, Scale, Users, Shield } from 'lucide-react';
+import Layout from '../components/Layout';
 
 const Terms: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+    <Layout 
+      currentPage="terms"
+      title="Terms of Use - Metals Calculator | Legal Terms & Conditions"
+      description="Read our terms of use to understand the legal terms and conditions for using Metals Calculator and our precious metals pricing services."
+    >
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -179,7 +184,7 @@ const Terms: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
