@@ -31,10 +31,16 @@ const AdBanner: React.FC<AdBannerProps> = ({
   }, [adSlot]); // run again if slot changes
 
   return (
-    <div className={`ad-banner ${className}`}>
+    <div className={`ad-banner ${className} ad-sens-main-div w-full max-w-full overflow-hidden`}>
       <ins
         className="adsbygoogle"
-        style={{ display: "block", minHeight: "100px" }}
+        style={{ 
+          display: "block", 
+          minHeight: "100px",
+          width: "100%",
+          maxWidth: "100%",
+          overflow: "hidden"
+        }}
         data-ad-client="ca-pub-8681185583405652"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}

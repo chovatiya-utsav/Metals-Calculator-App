@@ -35,7 +35,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-4 sm:mb-6">
       <h3 className="text-lg font-semibold text-gray-800 mb-4">Add Jewelry Item</h3>
       
       {/* Mode Selection */}
@@ -43,11 +43,11 @@ const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Mode
         </label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <button
             type="button"
             onClick={() => setMode('buying')}
-            className={`p-4 rounded-lg border-2 transition-all duration-200 flex items-center gap-3 ${
+            className={`p-3 sm:p-4 rounded-lg border-2 transition-all duration-200 flex items-center gap-2 sm:gap-3 ${
               mode === 'buying'
                 ? 'border-green-500 bg-green-50 text-green-700'
                 : 'border-gray-200 hover:border-green-300 hover:bg-green-50'
@@ -68,7 +68,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
           <button
             type="button"
             onClick={() => setMode('selling')}
-            className={`p-4 rounded-lg border-2 transition-all duration-200 flex items-center gap-3 ${
+            className={`p-3 sm:p-4 rounded-lg border-2 transition-all duration-200 flex items-center gap-2 sm:gap-3 ${
               mode === 'selling'
                 ? 'border-orange-500 bg-orange-50 text-orange-700'
                 : 'border-gray-200 hover:border-orange-300 hover:bg-orange-50'
@@ -90,7 +90,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Item Type
@@ -204,7 +204,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
 
         <button
           type="submit"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-colors duration-200"
+          className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-yellow-600 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-colors duration-200 w-full sm:w-auto"
         >
           <Plus size={16} />
           Add Item

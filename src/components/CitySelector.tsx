@@ -35,13 +35,13 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-      <div className="flex items-center gap-3 mb-4">
-        <MapPin className="text-yellow-600" size={24} />
-        <h2 className="text-xl font-semibold text-gray-800">Select Location for Current Rates</h2>
+    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+        <MapPin className="text-yellow-600" size={20} />
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800">Select Location for Current Rates</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Select State
@@ -94,7 +94,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({
           ) : rateError ? (
             <div className="text-center text-red-600 mb-2">{rateError}</div>
           ) : null}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {(() => {
               const rates = liveRates ?? selectedCity.rates ?? null;
               const gold24 = rates?.gold?.['24K'];

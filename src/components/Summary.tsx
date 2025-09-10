@@ -17,10 +17,10 @@ const Summary: React.FC<SummaryProps> = ({
   grandTotal
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <div className="flex items-center gap-3 mb-4">
-        <Calculator className="text-yellow-600" size={24} />
-        <h3 className="text-lg font-semibold text-gray-800">Summary</h3>
+    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+        <Calculator className="text-yellow-600" size={20} />
+        <h3 className="text-base sm:text-lg font-semibold text-gray-800">Summary</h3>
       </div>
       
       <div className="space-y-3">
@@ -45,7 +45,7 @@ const Summary: React.FC<SummaryProps> = ({
         
         <hr className="border-gray-200" />
         
-        <div className="flex justify-between text-lg font-semibold text-gray-800">
+        <div className="flex justify-between text-base sm:text-lg font-semibold text-gray-800">
           <span>{mode === 'buying' ? 'Total Amount:' : 'You Will Receive:'}</span>
           <span className={`${mode === 'buying' ? 'text-red-600' : 'text-green-600'}`}>
             ₹{grandTotal.toFixed(2)}
