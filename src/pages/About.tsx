@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const About: React.FC = () => {
   return (
     <Layout 
-      currentPage="about"
+      currentPage="abou t"
       title="About Us - Metals Calculator | Professional Precious Metals Pricing"
       description="Learn about Metals Calculator - the professional precious metals pricing tool for jewelry professionals, traders, and consumers. Real-time gold, silver, and platinum calculations."
     >
