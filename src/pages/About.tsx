@@ -109,6 +109,73 @@ const About: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 mt-8">Our Technology</h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Metals Calculator is built using modern web technologies to ensure fast, reliable, and accurate calculations. 
+              Our platform integrates with real-time market data APIs to fetch the latest precious metals rates, ensuring 
+              that your calculations always reflect current market conditions. We've designed our system with reliability 
+              in mind, incorporating automatic fallback mechanisms that switch to our curated static rate database if 
+              live data becomes temporarily unavailable.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              The calculator engine uses precise mathematical formulas that account for metal purity percentages, apply 
+              making charges correctly, and calculate GST according to current tax regulations. All calculations are 
+              performed client-side for instant results, while maintaining complete transparency so you can see exactly 
+              how each value is derived. Our commitment to accuracy means we regularly update our rate databases and 
+              calculation algorithms to reflect any changes in market practices or regulations.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Why Choose Metals Calculator?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg">
+                <h3 className="font-semibold text-gray-800 mb-3">Accuracy First</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Every calculation is performed using verified market rates and standardized formulas. We understand that 
+                  precision matters when dealing with precious metals, and our system is designed to provide accurate 
+                  results you can trust for important financial decisions.
+                </p>
+              </div>
+              
+              <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg">
+                <h3 className="font-semibold text-gray-800 mb-3">User-Friendly Design</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Our intuitive interface makes complex calculations simple. Whether you're a jewelry professional with 
+                  years of experience or someone making their first precious metals purchase, our calculator guides you 
+                  through the process step by step.
+                </p>
+              </div>
+              
+              <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg">
+                <h3 className="font-semibold text-gray-800 mb-3">Always Available</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Access our calculator anytime, anywhere. Our cloud-based platform works on all devices - desktop computers, 
+                  tablets, and smartphones. No downloads or installations required, just open your browser and start calculating.
+                </p>
+              </div>
+              
+              <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg">
+                <h3 className="font-semibold text-gray-800 mb-3">Free to Use</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  We believe everyone should have access to accurate precious metals pricing information. Our calculator 
+                  is completely free to use, with no hidden fees, registration requirements, or usage limits. Calculate 
+                  as many times as you need without any restrictions.
+                </p>
+              </div>
+            </div>
+
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Commitment to Privacy</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              We understand that financial calculations are sensitive, and we take your privacy seriously. Metals Calculator 
+              performs all calculations locally in your browser - your data never leaves your device unless you choose to 
+              generate and save a receipt. We don't track your calculations, store your personal information, or share your 
+              data with third parties.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Our comprehensive privacy policy details exactly how we handle any information you provide when contacting us 
+              for support. We believe in transparency and give you complete control over your data. You can use our calculator 
+              with confidence, knowing that your privacy is protected.
+            </p>
           </div>
         </div>
 

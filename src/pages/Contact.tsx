@@ -98,6 +98,37 @@ const Contact: React.FC = () => {
                 For urgent matters, please call us directly.
               </p>
             </div>
+
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Additional Information</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Technical Support</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    If you're experiencing technical issues with the calculator, please include details about your 
+                    device, browser version, and a description of the problem. This helps us resolve issues more quickly.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Feature Requests</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    We're constantly improving our calculator based on user feedback. If you have suggestions for new 
+                    features, additional cities, or improvements, we'd love to hear from you. Your input helps us 
+                    create a better tool for everyone.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Rate Accuracy Inquiries</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    If you notice discrepancies in our rate calculations, please contact us immediately with the specific 
+                    details. We take rate accuracy seriously and will investigate any issues promptly. Include the city, 
+                    metal type, and date of your calculation for faster resolution.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
@@ -177,6 +208,89 @@ const Contact: React.FC = () => {
                 Send Message
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Additional Content Section */}
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Contact Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">How quickly will I receive a response?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We aim to respond to all inquiries within 24 hours during business days (Monday through Friday). 
+                Weekend inquiries are typically answered by the following Monday. For urgent matters, we recommend 
+                calling our phone support line for immediate assistance. We prioritize technical issues and rate 
+                accuracy concerns to ensure our calculator remains reliable for all users.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Can I schedule a consultation?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                While we primarily operate as an online calculator service, we do offer consultation services for 
+                jewelry businesses and professional traders who need assistance with bulk calculations or integration 
+                requirements. Please contact us through the form above with details about your needs, and we'll arrange 
+                a consultation time that works for you.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Do you provide API access?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We're currently evaluating API access options for businesses that need to integrate our calculator 
+                into their own systems. If you're interested in API access, please contact us with details about your 
+                use case, expected volume, and integration requirements. We'll work with you to determine the best 
+                solution for your needs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">How can I report inaccurate rates?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Rate accuracy is crucial to our service. If you believe you've encountered inaccurate rates, please 
+                contact us immediately with the following information: the city and state you selected, the metal 
+                type (gold/silver), the date and time of your calculation, and the rate that appeared. We investigate 
+                all rate discrepancy reports and update our database promptly when issues are confirmed.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Partnership and Business Inquiries</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We're open to partnerships with jewelry retailers, financial institutions, and other businesses that 
+                could benefit from our calculator technology. If you're interested in discussing partnership 
+                opportunities, white-label solutions, or custom development, please reach out through our contact form 
+                with details about your organization and proposed collaboration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Help Resources */}
+        <div className="mt-8 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Before You Contact Us</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Many questions can be answered by checking our FAQ section on the homepage. We've compiled answers to the 
+            most common questions about how the calculator works, rate calculations, GST applications, and more. 
+            Before reaching out, we encourage you to browse our FAQ as it may provide immediate answers to your questions.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            For detailed information about our privacy practices, please review our Privacy Policy. For terms of use 
+            and service limitations, see our Terms of Use page. Both documents are accessible through our main navigation 
+            menu and footer links.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+              View FAQ Section
+            </a>
+            <a href="/privacy-policy" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+              Privacy Policy
+            </a>
+            <a href="/terms" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+              Terms of Use
+            </a>
           </div>
         </div>
       </div>

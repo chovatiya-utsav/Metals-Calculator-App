@@ -1,0 +1,12 @@
+# Robots.txt for Metals Calculator
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow admin or internal paths (if any exist in future)
+# Disallow: /admin/
+
+# Sitemap location (update when sitemap is created)
+# Sitemap: https://metalscalculator.com/sitemap.xml
+

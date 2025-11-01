@@ -205,6 +205,78 @@ function App() {
           </div>
         </div>
 
+        {/* Additional Content Section for SEO */}
+        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
+              How Our Precious Metals Calculator Works
+            </h2>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Understanding Precious Metals Pricing</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Precious metals like gold and silver are valued based on their purity and current market rates. Our calculator 
+                  simplifies this complex process by automatically fetching the latest market rates for your selected city and 
+                  calculating accurate prices based on the purity level of your jewelry. Whether you have 24K pure gold, 22K gold 
+                  (which contains 91.6% pure gold), or 18K gold (75% pure gold), our system accurately computes the value.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  For silver jewelry, we use 999 purity silver rates and calculate the exact value based on the weight of your items. 
+                  The calculator also accounts for making charges, which are the costs associated with crafting jewelry from raw metal. 
+                  These charges can be calculated as a fixed amount per gram or as a percentage of the metal value, giving you 
+                  complete flexibility in your calculations.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Buying vs. Selling Calculations</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Our calculator supports two distinct modes to accurately reflect real-world transactions. In buying mode, the system 
+                  adds making charges to the base metal value and applies GST (Goods and Services Tax) at the standard rate of 3% 
+                  for jewelry purchases in India. This gives you the total amount you'll need to pay when purchasing new jewelry.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  When selling jewelry, the calculator works differently. It deducts making charges from the pure metal value, as 
+                  these are costs that were incurred during manufacturing and cannot be recovered. No GST is applied to selling 
+                  transactions. This mode helps you understand the actual value you'll receive when selling your jewelry, accounting 
+                  for the fact that second-hand jewelry typically fetches a price based on metal content rather than original retail value.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">City-Specific Rate Accuracy</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Precious metal rates vary by location due to local market conditions, transportation costs, and regional demand. 
+                  Our calculator supports multiple cities across various states, allowing you to select your location for the most 
+                  accurate pricing. We integrate with live rate APIs to fetch real-time market prices, ensuring your calculations 
+                  reflect current market conditions.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  If live rate data is unavailable, the system automatically falls back to our comprehensive database of static rates, 
+                  which are regularly updated to maintain accuracy. This dual-system approach ensures you always get reliable pricing 
+                  information, even during network issues or API downtime.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Professional Receipt Generation</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Once you've calculated your jewelry values, our system generates professional receipts that you can print or save. 
+                  Each receipt includes a unique receipt number, detailed breakdown of all items with their individual calculations, 
+                  subtotals, making charges, GST amount (for buying transactions), and the final grand total. This feature is 
+                  particularly valuable for jewelry businesses that need to provide customers with detailed transaction records.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  The receipt format is designed to be professional and comprehensive, suitable for both personal records and business 
+                  documentation. You can print these receipts directly from your browser, making it easy to maintain accurate records 
+                  of your precious metals transactions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <CitySelector
           selectedCity={selectedCity}
           onCityChange={(city) => setSelectedCity(city)}
@@ -212,16 +284,6 @@ function App() {
           loadingRates={loadingRates}
           rateError={rateError}
         />
-
-        {/* Top Ad Banner */}
-        <div className="mb-6">
-          <AdBanner 
-            adSlot="1234567890" 
-            adFormat="auto" 
-            fullWidthResponsive={true} 
-            className="text-center"
-          />
-        </div>
 
         {!selectedCity.id && (
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
@@ -234,6 +296,18 @@ function App() {
         {selectedCity.id && (
           <>
         <ItemForm onAddItem={addItem} />
+
+        {/* Top Ad Banner - Only show when city selected AND items exist */}
+        {(itemsByMode.buying.length > 0 || itemsByMode.selling.length > 0) && (
+          <div className="mb-6">
+            <AdBanner 
+              adSlot="1234567890" 
+              adFormat="auto" 
+              fullWidthResponsive={true} 
+              className="text-center"
+            />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {/* Buying Section */}
@@ -305,15 +379,17 @@ function App() {
           </div>
         </div>
 
-        {/* Bottom Ad Banner */}
-        <div className="mt-8">
-          <AdBanner 
-            adSlot="1234567890" 
-            adFormat="auto" 
-            fullWidthResponsive={true} 
-            className="text-center"
-          />
-        </div>
+        {/* Bottom Ad Banner - Only show when city selected AND items exist */}
+        {(itemsByMode.buying.length > 0 || itemsByMode.selling.length > 0) && (
+          <div className="mt-8">
+            <AdBanner 
+              adSlot="1234567890" 
+              adFormat="auto" 
+              fullWidthResponsive={true} 
+              className="text-center"
+            />
+          </div>
+        )}
           </>
         )}
 
