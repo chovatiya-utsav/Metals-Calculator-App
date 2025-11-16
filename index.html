@@ -59,19 +59,16 @@
   <!-- This can boost earnings by 10-30% due to stricter filters -->
   <script>
     (function() {
-      // Anti-AdBlock detection and popunder script
+      // Load popunder script directly - HilltopAds script handles everything
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.async = true;
       script.src = 'https://plumprush.com/bM3eVa0.PH3LpNvbbWmTVsJAZPDR0/2vN_z_AP1/N/j_MwzFL/TgYe3CM/DQU/2kMEzVQP';
       
-      // Fallback if script is blocked
+      // Error handling - if script fails to load, silently continue
       script.onerror = function() {
-        // Alternative method if main script is blocked
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = 'https://plumprush.com/bM3eVa0.PH3LpNvbbWmTVsJAZPDR0/2vN_z_AP1/N/j_MwzFL/TgYe3CM/DQU/2kMEzVQP';
-        document.body.appendChild(iframe);
+        // Script blocked or failed to load - this is normal with ad blockers
+        // The main script should handle popunder functionality when it loads successfully
       };
       
       document.head.appendChild(script);
