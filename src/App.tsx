@@ -345,7 +345,11 @@ function App() {
                   <Summary mode="buying" {...totalsBuying} />
                   <div className="text-center mt-4">
                     <button
-                      onClick={() => setShowReceiptBuying(prev => !prev)}
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowReceiptBuying(prev => !prev);
+                      }}
                       className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-lg hover:from-yellow-700 hover:to-amber-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                       <Gem size={20} />
@@ -379,7 +383,11 @@ function App() {
                   <Summary mode="selling" {...totalsSelling} />
                   <div className="text-center mt-4">
                     <button
-                      onClick={() => setShowReceiptSelling(prev => !prev)}
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowReceiptSelling(prev => !prev);
+                      }}
                       className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-lg hover:from-yellow-700 hover:to-amber-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                       <Gem size={20} />

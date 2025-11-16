@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Gem, Target, Users, Award, TrendingUp, Shield } from 'lucide-react';
 import Layout from '../components/Layout';
 
@@ -185,12 +186,12 @@ const About: React.FC = () => {
           <p className="text-lg mb-6 opacity-90">
             Try our calculator today and experience the most accurate precious metals pricing available.
           </p>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="inline-block bg-white text-yellow-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
           >
             Use Calculator Now
-          </a>
+          </Link>
         </div>
       </div>
     </Layout>

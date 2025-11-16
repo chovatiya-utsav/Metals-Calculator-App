@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 import Layout from '../components/Layout';
 
@@ -282,15 +283,15 @@ const Contact: React.FC = () => {
             menu and footer links.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
-            <a href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+            <Link to="/" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
               View FAQ Section
-            </a>
-            <a href="/privacy-policy" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+            </Link>
+            <Link to="/privacy-policy" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
               Privacy Policy
-            </a>
-            <a href="/terms" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+            </Link>
+            <Link to="/terms" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-yellow-600 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
               Terms of Use
-            </a>
+            </Link>
           </div>
         </div>
       </div>

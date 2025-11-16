@@ -45,7 +45,11 @@ const FAQ: React.FC = () => {
         {faqData.map((item, index) => (
           <div key={index} className="border border-gray-200 rounded-lg">
             <button
-              onClick={() => toggleItem(index)}
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleItem(index);
+              }}
               className="w-full px-4 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
             >
               <span className="font-medium text-gray-800 pr-4">{item.question}</span>

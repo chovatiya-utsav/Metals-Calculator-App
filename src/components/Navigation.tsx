@@ -52,7 +52,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className="text-gray-700 hover:text-yellow-600 focus:outline-none focus:text-yellow-600"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -8,16 +8,11 @@ interface ReceiptProps {
 }
 
 const Receipt: React.FC<ReceiptProps> = ({ receipt, onPrint }) => {
-  const handleDownload = () => {
-    const element = document.getElementById('receipt-content');
-    if (element) {
-      const printContent = element.innerHTML;
-      const originalContent = document.body.innerHTML;
-      document.body.innerHTML = printContent;
-      window.print();
-      document.body.innerHTML = originalContent;
-      window.location.reload();
-    }
+  const handleDownload = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Use print functionality directly without manipulating DOM
+    onPrint();
   };
 
   return (
@@ -26,6 +21,7 @@ const Receipt: React.FC<ReceiptProps> = ({ receipt, onPrint }) => {
         <h3 className="text-base sm:text-lg font-semibold text-gray-800">Receipt</h3>
         <div className="flex gap-2">
           <button
+            type="button"
             onClick={handleDownload}
             className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 flex-1 sm:flex-none"
           >
@@ -33,7 +29,11 @@ const Receipt: React.FC<ReceiptProps> = ({ receipt, onPrint }) => {
             Download
           </button>
           <button
-            onClick={onPrint}
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              onPrint();
+            }}
             className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 flex-1 sm:flex-none"
           >
             <Printer size={14} />

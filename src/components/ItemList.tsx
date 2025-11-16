@@ -85,7 +85,12 @@ const ItemList: React.FC<ItemListProps> = ({ items, mode, onRemoveItem }) => {
                 </td>
                 <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-right text-xs sm:text-sm font-medium">
                   <button
-                    onClick={() => onRemoveItem(item.id)}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onRemoveItem(item.id);
+                    }}
                     className="text-red-600 hover:text-red-900 transition-colors duration-200 p-1"
                   >
                     <Trash2 size={14} />
