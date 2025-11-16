@@ -129,9 +129,83 @@ const PrivacyPolicy: React.FC = () => {
 
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Cookies and Tracking Technologies</h2>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, 
                 and understand where our visitors are coming from. You can control cookie settings through your browser preferences.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Our website uses cookies for various purposes including authentication, preferences, analytics, and advertising. 
+                Third-party services such as Google AdSense, Media.net, and Adsterra may also use cookies to serve personalized 
+                advertisements based on your browsing behavior and interests.
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Google AdSense and Third-Party Advertising</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Metals Calculator uses Google AdSense, a third-party advertising service provided by Google LLC. Google AdSense 
+                uses cookies and web beacons to serve personalized advertisements based on your visits to our website and other 
+                websites on the internet. This helps us provide free access to our calculator services.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Google AdSense may collect and use information about your visits to this and other websites to provide relevant 
+                advertisements about goods and services. This information may include your IP address, browser type, device 
+                information, and browsing patterns. Google's use of advertising cookies enables it and its partners to serve 
+                ads to you based on your visit to our site and/or other sites on the Internet.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In addition to Google AdSense, we may also use other third-party advertising networks including Media.net and 
+                Adsterra. These services may use cookies, web beacons, and similar technologies to collect information about your 
+                online activities across different websites to provide you with relevant advertisements.
+              </p>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+                <p className="text-yellow-800 text-sm">
+                  <strong>Opt-Out Options:</strong> You can opt out of personalized advertising by visiting Google's Ad Settings 
+                  at <a href="https://www.google.com/settings/ads" className="underline" target="_blank" rel="noopener noreferrer">www.google.com/settings/ads</a>. 
+                  You can also opt out of some third-party vendors' uses of cookies by visiting the Network Advertising Initiative 
+                  opt-out page at <a href="http://www.networkadvertising.org/choices/" className="underline" target="_blank" rel="noopener noreferrer">www.networkadvertising.org/choices/</a>.
+                </p>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Third-Party Vendors and Services</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We work with various third-party vendors and service providers to deliver our services and improve user experience. 
+                These third parties may collect information about your use of our website:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                <li><strong>Google AdSense:</strong> For serving advertisements and analyzing ad performance</li>
+                <li><strong>Media.net:</strong> Alternative advertising network for ad serving</li>
+                <li><strong>Adsterra:</strong> Additional advertising network for ad monetization</li>
+                <li><strong>Analytics Services:</strong> To understand how users interact with our website</li>
+                <li><strong>Rate Providers:</strong> Third-party APIs for fetching real-time precious metals rates</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed">
+                These third-party vendors have their own privacy policies and terms of service. We encourage you to review their 
+                privacy policies to understand how they collect, use, and protect your information. We are not responsible for 
+                the privacy practices of these third-party services.
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Usage and Processing</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The data we collect is used for the following purposes:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                <li>To provide and maintain our calculator services</li>
+                <li>To process your calculations and generate receipts</li>
+                <li>To improve our website functionality and user experience</li>
+                <li>To serve relevant advertisements through third-party ad networks</li>
+                <li>To analyze website usage and optimize performance</li>
+                <li>To comply with legal obligations and protect our rights</li>
+                <li>To provide customer support and respond to inquiries</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed">
+                We do not sell your personal information to third parties. However, third-party advertising networks may use 
+                information collected through cookies and similar technologies to serve personalized advertisements. This data 
+                usage is governed by the privacy policies of those third-party services.
               </p>
             </div>
 

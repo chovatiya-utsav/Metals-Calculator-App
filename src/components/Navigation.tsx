@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Gem } from 'lucide-react';
 
 interface NavigationProps {
@@ -7,6 +9,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { name: 'Home', path: '/', id: 'home' },
@@ -28,19 +31,22 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  currentPage === item.id
-                    ? 'text-yellow-600 bg-yellow-50'
-                    : 'text-gray-700 hover:text-yellow-600 hover:bg-yellow-50'
-                }`}
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path || (item.path === '/' && location.pathname === '/');
+              return (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-yellow-600 bg-yellow-50'
+                      : 'text-gray-700 hover:text-yellow-600 hover:bg-yellow-50'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -55,26 +61,43 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              {navItems.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                    currentPage === item.id
-                      ? 'text-yellow-600 bg-yellow-50'
-                      : 'text-gray-700 hover:text-yellow-600 hover:bg-yellow-50'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="md:hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                {navItems.map((item, index) => {
+                  const isActive = location.pathname === item.path || (item.path === '/' && location.pathname === '/');
+                  return (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Link
+                        to={item.path}
+                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                          isActive
+                            ? 'text-yellow-600 bg-yellow-50'
+                            : 'text-gray-700 hover:text-yellow-600 hover:bg-yellow-50'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

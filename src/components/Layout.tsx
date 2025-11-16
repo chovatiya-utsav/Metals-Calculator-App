@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -19,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   useEffect(() => {
     // Base URL - should be your actual domain in production
-    const baseUrl = 'https://metalscalculator.com';
+    const baseUrl = 'https://metals-calculator-app.vercel.app';
     
     // Get current pathname
     const pathname = window.location.pathname;
@@ -77,9 +78,13 @@ const Layout: React.FC<LayoutProps> = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 overflow-x-hidden">
       <Navigation currentPage={currentPage} />
-      <main>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         {children}
-      </main>
+      </motion.main>
       <Footer />
     </div>
   );

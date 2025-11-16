@@ -1,7 +1,7 @@
 // AdSense configuration and utilities
 
 export const ADSENSE_CONFIG = {
-  clientId: 'ca-pub-8681185583405652',
+  clientId: 'ca-pub-8681185583405652', // Your AdSense publisher ID
   // Replace these with your actual ad slot IDs from AdSense
   adSlots: {
     topBanner: '1234567890', // Replace with actual slot ID

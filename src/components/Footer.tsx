@@ -1,12 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Gem, Mail, Phone, MapPin } from 'lucide-react';
+import SmartAd from './Ads/SmartAd';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-800 text-white overflow-x-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Footer Ad Banner */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="mb-6">
+          <SmartAd slot="1234567890" />
+        </div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
@@ -25,29 +34,34 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                <Link to="/" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                <Link to="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                <Link to="/contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy-policy" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                <Link to="/privacy-policy" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                <Link to="/terms" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
                   Terms of Use
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/disclaimer" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm">
+                  Disclaimer
+                </Link>
               </li>
             </ul>
           </div>

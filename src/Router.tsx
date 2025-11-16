@@ -5,6 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
+import Disclaimer from './pages/Disclaimer';
 
 const AppRouter: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
       </Routes>
     </Router>
   );

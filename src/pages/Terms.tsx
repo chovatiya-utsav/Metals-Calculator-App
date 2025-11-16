@@ -123,7 +123,31 @@ const Terms: React.FC = () => {
                 <li>Not attempt to gain unauthorized access to any part of the website</li>
                 <li>Not interfere with or disrupt the website's functionality</li>
                 <li>Respect the intellectual property rights of Metals Calculator and third parties</li>
+                <li>Not use ad-blocking software that interferes with our advertising revenue</li>
+                <li>Understand that the calculator provides estimates, not definitive transaction values</li>
               </ul>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">No Financial Advice</h2>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-4">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="text-red-600 mt-1" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-red-800 mb-2">Important Financial Disclaimer</h3>
+                    <p className="text-red-700 text-sm leading-relaxed mb-2">
+                      Metals Calculator does not provide financial, investment, or trading advice. The information and calculations 
+                      provided on this website are for informational purposes only and should not be construed as financial advice, 
+                      investment recommendations, or guidance for making financial decisions.
+                    </p>
+                    <p className="text-red-700 text-sm leading-relaxed">
+                      We are not licensed financial advisors, investment brokers, or registered investment advisors. Always consult 
+                      with qualified financial professionals before making investment decisions involving precious metals. Past 
+                      performance and current rates do not guarantee future results.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mb-8">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Gem, Calculator, TrendingUp, Shield, Users, Award } from 'lucide-react';
 import { JewelryItem, CalculatedItem, City, Receipt as ReceiptType } from './types';
 import { calculateItemValue, calculateTotals } from './utils/calculations';
@@ -7,7 +8,7 @@ import ItemForm from './components/ItemForm';
 import ItemList from './components/ItemList';
 import Summary from './components/Summary';
 import Receipt from './components/Receipt';
-import AdBanner from './components/AdBanner';
+import SmartAd from './components/Ads/SmartAd';
 import Layout from './components/Layout';
 import FAQ from './components/FAQ';
 
@@ -117,7 +118,12 @@ function App() {
     >
       <div className="max-w-6xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-8">
+        <motion.div 
+          className="text-center mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
             <Gem className="text-yellow-600" size={24} />
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
@@ -128,10 +134,20 @@ function App() {
             Professional metals pricing system with real-time calculations, GST computation, 
             and receipt generation for buying and selling scenarios.
           </p>
+        </motion.div>
+
+        {/* Top Ad - Homepage */}
+        <div className="mb-6 sm:mb-8">
+          <SmartAd slot="1234567890" />
         </div>
 
         {/* Rich Content Introduction */}
-        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+        <motion.div 
+          className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
               Professional Precious Metals Pricing Calculator
@@ -203,10 +219,15 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Additional Content Section for SEO */}
-        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+        <motion.div 
+          className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
               How Our Precious Metals Calculator Works
@@ -275,7 +296,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <CitySelector
           selectedCity={selectedCity}
@@ -297,15 +318,10 @@ function App() {
           <>
         <ItemForm onAddItem={addItem} />
 
-        {/* Top Ad Banner - Only show when city selected AND items exist */}
+        {/* Middle Ad - Only show when city selected AND items exist */}
         {(itemsByMode.buying.length > 0 || itemsByMode.selling.length > 0) && (
           <div className="mb-6">
-            <AdBanner 
-              adSlot="1234567890" 
-              adFormat="auto" 
-              fullWidthResponsive={true} 
-              className="text-center"
-            />
+            <SmartAd slot="1234567890" />
           </div>
         )}
 
@@ -379,19 +395,70 @@ function App() {
           </div>
         </div>
 
-        {/* Bottom Ad Banner - Only show when city selected AND items exist */}
+        {/* Bottom Ad - Only show when city selected AND items exist */}
         {(itemsByMode.buying.length > 0 || itemsByMode.selling.length > 0) && (
           <div className="mt-8">
-            <AdBanner 
-              adSlot="1234567890" 
-              adFormat="auto" 
-              fullWidthResponsive={true} 
-              className="text-center"
-            />
+            <SmartAd slot="1234567890" />
           </div>
         )}
           </>
         )}
+
+        {/* Gold Price Calculator for India - SEO Section */}
+        <motion.div 
+          className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
+              Gold Price Calculator for India
+            </h2>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Understanding Gold Pricing in India</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Our Gold Price Calculator for India is specifically designed to help you understand and calculate accurate gold prices based on current market rates across different cities in India. Gold pricing in India is influenced by several factors including international gold rates, currency exchange rates, local demand, and regional market conditions. Whether you're buying gold jewelry for a special occasion or selling family heirlooms, understanding how gold prices are calculated is essential for making informed decisions.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  The calculator takes into account the purity of gold, which is measured in karats. In India, the most common gold purities are 24K (pure gold), 22K (91.6% pure gold), and 18K (75% pure gold). Each karat level affects the final price, with 24K gold being the most expensive due to its higher purity. Our calculator automatically adjusts prices based on the karat value you select, ensuring accurate calculations for your specific gold items.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">City-Based Gold Pricing</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Gold prices vary significantly across different cities in India due to local market dynamics, transportation costs, and regional demand patterns. Major metropolitan cities like Mumbai, Delhi, and Bangalore often have different gold rates compared to smaller cities. Our calculator supports multiple cities across various states, allowing you to select your location for the most accurate pricing. We integrate with live rate APIs to fetch real-time market prices, ensuring your calculations reflect current market conditions in your specific city.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  The city-based pricing feature is particularly important for accurate calculations because gold rates can differ by several hundred rupees per 10 grams between cities. This variation occurs due to factors such as local taxes, dealer margins, and regional supply-demand dynamics. By selecting your city, you ensure that the calculator uses rates that are most relevant to your location, giving you a more accurate estimate of gold prices for your transactions.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">GST Calculation for Gold in India</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  When purchasing gold jewelry in India, Goods and Services Tax (GST) is applicable at a rate of 3% on the total value of the gold item, including making charges. Our calculator automatically calculates GST for buying transactions, ensuring compliance with Indian tax regulations. The GST is calculated on the sum of the gold value and making charges, providing you with a complete breakdown of all costs involved in your purchase.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  It's important to note that GST is only applicable when buying new gold jewelry. When selling gold, no GST is charged as it's considered a sale of used goods. Our calculator handles both scenarios correctly - adding GST for buying transactions and excluding it for selling transactions. This ensures you have a clear understanding of the total amount you'll pay when buying gold or the amount you'll receive when selling gold jewelry.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Making Charges and Final Pricing</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Making charges are the costs associated with crafting gold jewelry from raw metal. These charges can be calculated as a fixed amount per gram or as a percentage of the gold value. Our calculator supports both calculation methods, giving you flexibility to match how your jeweler calculates making charges. When buying gold jewelry, making charges are added to the base gold value, and then GST is calculated on the total.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  When selling gold jewelry, making charges are deducted from the pure gold value, as these are manufacturing costs that cannot be recovered. This reflects the reality that second-hand jewelry is typically valued based on its metal content rather than its original retail price. Our calculator provides transparent calculations showing the breakdown of gold value, making charges, GST (if applicable), and the final total, helping you understand exactly how your gold price is determined.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* FAQ Section */}
         <FAQ />
